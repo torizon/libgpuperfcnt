@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+LIBGPUPERFCNT_INSTALLER_SCRIPT="libgpuperfcnt-6.4.3.p4.2-aarch64-wayland.bin"
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	wget -O $(CURDIR)/libgpuperfcnt.sh https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/$(LIBGPUPERFCNT_INSTALLER_SCRIPT)
+	mkdir -p ./tmp/ ; chmod +x ./libgpuperfcnt.sh ; ./libgpuperfcnt.sh --force --auto-accept
+
+override_dh_strip_nondeterminism:
+
+override_dh_strip:
