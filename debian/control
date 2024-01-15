@@ -1,0 +1,15 @@
+Source: libgpuperfcnt
+Section: devel
+Priority: optional
+Maintainer: Leonardo Held <leonardo.held@toradex.com>
+Build-Depends: debhelper (>= 9),
+               lsb-release,
+               wget
+Standards-Version: 4.5.1
+Homepage: https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/libgpuperfcnt-6.4.3.p4.2-aarch64-wayland.bin
+
+Package: libgpuperfcnt
+Architecture: arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}, imx-gpu-viv-wayland
+Description: Library to retrieve i.MX GPU performance data
+
