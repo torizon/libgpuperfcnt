@@ -12,5 +12,4 @@ jobs:
           buildpackage-opts: --build=binary --no-sign
           host-arch: arm64
           apt-opts: --install-recommends
-          extra-build-deps: ca-certificates
 
