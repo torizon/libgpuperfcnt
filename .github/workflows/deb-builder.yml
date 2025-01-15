@@ -1,15 +1,22 @@
+name: Build Debian Package
+
 on: push
 
 jobs:
-  build-debs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: jtdor/build-deb-action@v1
-        env:
-          DEB_BUILD_OPTIONS: noautodbgsym
-        with:
-          buildpackage-opts: --build=binary --no-sign
-          host-arch: arm64
-          apt-opts: --install-recommends
-
+  build:
+    permissions:
+      id-token: write
+      contents: read
+      attestations: write
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: ['arm64']
+    uses: torizon/torizon-deb-ci/.github/workflows/toradex-deb-ci.yml@v0
+    with:
+      arch: ${{ matrix.arch }}
+      docker-image: debian:bookworm
+      package-name: aktualizr-torizon
+      run-attestation: true
+      run-piuparts: false
+      upload-artifacts: true
