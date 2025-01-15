@@ -1,3 +1,10 @@
+libgpuperfcnt (99ab423) unstable; urgency=medium
+
+  * ac83d581da2a051a04f813bdab64bcb5d48557df
+        Update to scarthgap-6.6.36-2.1.0
+
+ -- Leonardo Held <leonardo.held@toradex.com>  Wed, 15 Jan 2025 12:09:58 -0300
+
 libgpuperfcnt (6.4.3) unstable; urgency=medium
 
   * Initial release.

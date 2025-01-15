@@ -5,7 +5,7 @@ export DH_VERBOSE=1
 
 DEB_BUILD_OPTIONS=noautodbgsym
 
-LIBGPUPERFCNT_INSTALLER_SCRIPT="libgpuperfcnt-6.4.3.p4.2-aarch64-wayland.bin"
+LIBGPUPERFCNT_INSTALLER_SCRIPT="libgpuperfcnt-git-aarch64-wayland-99ab423.bin"
 
 %:
 	dh $@
